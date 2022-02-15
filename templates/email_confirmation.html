@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+Welcome VIKNESH app Login
+
+Hello {{ name}}
+
+Please confirm your email by clicking on the following link.
+
+confirmation Link: http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+{% endautoescape %}

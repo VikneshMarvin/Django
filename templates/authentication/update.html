@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"> {% load static %}
+    <link rel="stylesheet" href="{% static 'register/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    {% for message in messages %}
+    <div class = "alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong>Message:</strong> {{ message}}
+    <button type="button" class = "close" data-dismiss="alert" aria-label="close">
+    <span aria-hidden="true">&times:</span>
+    </button>
+    </div>
+    {%endfor%}
+            <div class="col-4">
+                <div class="card">
+                    <h4 class="card-header text-center">COMMENT</h4>
+                    <div class="card-block">
+                        <form method="post" action="/comment">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>Comment</label>
+                                <input name="comment" type="text" class="form-control">
+                            </div>
+                            <div class="mx-auto text-center">
+                                <button type="comment"> <a href="/comment"> Comment </a></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </script>
+</body>
+
+</html>
